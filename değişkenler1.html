@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="tr-TR">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" <title> </title>
+
+    <link type="text/css" rel="stylesheet" href="">
+    <!--bu satır dışarıdan css dosyası ekleme satırı  -->
+
+</head>
+
+<body>
+
+
+
+    <script type="text/javascript" lang="javascript">
+        var isim = "Zeynep ";
+        var $soyisim = "Rutbil ";
+        var _dil = "İngilizce ";
+
+        document.write(isim + "<br />");
+        document.write($soyisim + "<br />");
+        document.write(_dil + "<br />");
+
+
+
+        //////
+
+        var deneme1 = "Java";
+        var deneme2 = "Script ";
+        var sonuc1 = deneme1 + deneme2;
+        document.write(sonuc1 + "<br />");
+
+        var deneme3 = 1;
+        var deneme4 = 3;
+        var sonuc2 = deneme3 + deneme4;
+        document.write(sonuc2 + "<br />");
+
+        var deneme5 = " 1";
+        var deneme6 = "3";
+        var sonuc3 = deneme5 + deneme6;
+        document.write(sonuc3 + "<br />" + "<br />" + "<br />" + "<br />");
+
+
+
+
+        ///////// TYPEOF
+        var ism = "XXX"; //string
+        var sayii = 4; //number
+        var mantiksal = true; //boolean
+        var isimler = ["xxx", "yyy"]; //array
+        var nesneler = new Object(); //object
+        var tanimsiz; //undefined
+        var bos = ""; //null
+
+
+        var depo1 = ism + ":" + typeof(ism); //string
+        document.write(depo1 + "<br />");
+        document.write(typeof(ism) + "<br />");
+
+        var depo2 = sayii + ":" + typeof(sayii); //number
+        document.write(depo2 + "<br />");
+        document.write(typeof(sayii) + "<br />");
+
+        var depo3 = mantiksal + ":" + typeof(mantiksal); //boolean
+        document.write(depo3 + "<br />");
+        document.write(typeof(mantiksal) + "<br />");
+
+        var depo4 = isimler + ":" + typeof(isimler); // array (object)
+        document.write(depo4 + "<br />");
+        document.write(typeof(isimler) + "<br />");
+
+        var depo5 = nesneler + ":" + typeof(nesneler); //object
+        document.write(depo5 + "<br />");
+        document.write(typeof(nesneler) + "<br />");
+
+        var depo6 = tanimsiz + ":" + typeof(tanimsiz); //undefined
+        document.write(depo6 + "<br />");
+        document.write(typeof(tanimsiz) + "<br />");
+
+        var depo7 = bos + ":" + typeof(bos); //null
+        document.write(depo7 + "<br />");
+        document.write(typeof(bos) + "<br />" + "<br />" + "<br />");
+
+
+
+
+        /////// LENGHT
+        var metin = "wxyz";
+        document.write(metin + "<br />")
+        var islem = metin.length; //3
+        document.write("Karakter Sayisi:" + islem + "<br />" + "<br />" + "<br />");
+
+
+        //////////// EVAL
+        var deger = eval("10*40");
+        document.write(deger + "<br />" + "<br />" + "<br />");
+
+
+        //////////SLICE
+        var icerik = "Javascript Eğitim Seti";
+        document.write(icerik + "<br />");
+        var sonuc = icerik.slice(); //tamamı
+        document.write(sonuc + "<br />");
+        var sonucx = icerik.slice(6); //6 da itibaren
+        document.write(sonucx + "<br />");
+        var sonucy = icerik.slice(7, 11); //7-11 arası
+        document.write(sonucy + "<br />" + "<br />" + "<br />");
+        //////// SUBSTR
+        var icerik1 = "Javascript Eğitim";
+        document.write(icerik1 + "<br />");
+        var snc = icerik1.substr(-8);
+        document.write(snc + "<br />" + "<br />" + "<br />");
+
+
+        /////// CONCAT
+        var icerik2 = "XXX ";
+        var icerik3 = "YYY";
+        document.write(icerik2 + "<br />");
+        document.write(icerik3 + "<br />");
+
+        var islem = icerik2.concat(icerik3);
+        document.write(islem + "<br />" + "<br />" + "<br />");
+
+        ////// REPEAT
+        var icerik4 = "Javascript ";
+        document.write(icerik4 + "<br />");
+
+        var islem2 = icerik4.repeat(4); //4 defa yazılacak
+        document.write(islem2 + "<br />" + "<br />" + "<br />");
+
+
+        ////// STRING
+        var bir = Boolean(0);
+        var iki = Boolean(1);
+        var uc = 8;
+        var dort = 4.56;
+        var bes = ["xxx", "yyy"];
+        var alti;
+        var yedi = new Date();
+
+        document.write(typeof bir + ":" + bir + "<br />");
+        document.write(typeof iki + ":" + iki + "<br />");
+        document.write(typeof uc + ":" + uc + "<br />");
+        document.write(typeof dort + ":" + dort + "<br />");
+        document.write(typeof bes + ":" + bes + "<br />");
+        document.write(typeof alti + ":" + alti + "<br />");
+        document.write(typeof yedi + ":" + yedi + "<br />");
+
+        var yenibir = String(bir);
+        var yeniiki = String(iki);
+        var yeniuc = String(uc);
+        var yenidort = String(dort);
+        var yenibes = String(bes);
+        var yenialti = String(alti);
+        var yeniyedi = String(yedi);
+
+        document.write(typeof yenibir + ":" + yenibir + "<br />");
+        document.write(typeof yeniiki + ":" + yeniiki + "<br />");
+        document.write(typeof yeniuc + ":" + yeniuc + "<br />");
+        document.write(typeof yenidort + ":" + yenidort + "<br />");
+        document.write(typeof yenibes + ":" + yenibes + "<br />");
+        document.write(typeof yenialti + ":" + yenialti + "<br />");
+        document.write(typeof yeniyedi + ":" + yeniyedi + "<br />" + "<br />" + "<br />");
+
+
+        ////VALUEOF
+        var deger1 = 5;
+        var sonucdgr = deger1.valueOf();
+        document.write(sonucdgr + "<br />" + "<br />" + "<br />");
+
+
+        ////INDEXOF
+        var metn = "Javascript Eğitim Programı";
+        document.write(metn + "<br />");
+        var bul = metn.indexOf("a"); // a harfinin sırasını bulur
+        document.write(bul + "<br />");
+        var bul1 = metn.indexOf("a", 8); // a harfinin 8den sonraki sırasını bulur
+        document.write(bul1 + "<br />" + "<br />" + "<br />");
+
+
+        ////LASTINDEXOF
+        var metnx = "Javascript Eğitim Programı";
+        document.write(metnx + "<br />");
+        var bulx = metnx.lastIndexOf("m"); //m harfinin en son kullanıldığı sıra sayısını verir
+        document.write(bulx + "<br />");
+
+        var metny = "Javascript Javascript Javascript Javascript Javascript Javascript Javascript Javascript"
+        document.write(metny + "<br />");
+        var buly = metny.lastIndexOf("script", 25); //25. karaktere kadar script kelimesini arar yine en son kulanılan sırayı verir
+        document.write(buly + "<br />" + "<br />" + "<br />");
+
+        ///STARTSWITH
+        var metnz = "Javascript Eğitim Programı";
+        document.write(metnz + "<br />");
+        var bulz = metnz.startsWith("php");
+        document.write(bulz + "<br />" + "<br />" + "<br />");
+
+        ///ENDSWITH
+        var metnk = "Javascript Eğitim Programı";
+        document.write(metnk + "<br />");
+        var bulk = metnz.endsWith("Programı");
+        document.write(bulk + "<br />" + "<br />" + "<br />");
+
+
+        /////MATCH
+        var metinj = "Javascript Eğitim Seti javacript JAVASCRIPT";
+        document.write(metinj + "<br />");
+        var sonucj = metinj.match(/JavaScript/gi)
+        document.write(sonucj + "<br />" + "<br />" + "<br />");
+
+
+        ////REPLACE
+        var metnj = "Dünyada en yaygın kullanılan script dili php dir"
+        document.write(metnj + "<br />");
+        var duzeltme = metnj.replace("php", "javascript");
+        document.write(duzeltme + "<br />" + "<br />" + "<br />");
+
+
+        //////LOCALCOMPARE
+        var metin1 = "abc";
+        var metin2 = "abe";
+        document.write(metin1 + "<br />");
+        document.write(metin2 + "<br />");
+        var karsılastırma = metin1.localeCompare(metin2);
+        document.write(karsılastırma + "<br />" + "<br />" + "<br />");
+
+
+        /////FROMCHARCODE
+        var icerikx = String.fromCharCode(86, 47, 57, 108);
+        document.write(icerikx + "<br />");
+        var iceriky = String.fromCharCode(122, 101, 121, 110, 101, 112);
+        document.write(iceriky + "<br />" + "<br />" + "<br />");
+
+
+        ////ENCODEURI
+        var icerikc = "http.xyzabcüörçaöağ.com";
+        document.write(icerikc + "<br />");
+        var duzelt = encodeURI(icerikc);
+        document.write(duzelt + "<br />" + "<br />" + "<br />");
+
+
+        /////DECODEURI
+        var icerikb = "http.xyzabc%C3%BC%C3%B6r%C3%A7a%C3%B6a%C4%9F.com";
+        document.write(icerikb + "<br />");
+        var duzeltb = decodeURI(icerikb);
+        document.write(duzeltb + "<br />" + "<br />" + "<br />");
+
+
+        ////// UPPERCASE LOWERCASE
+        var yazi1 = "Javascript";
+        var yazi2 = "Eğitim SETİ";
+        document.write(yazi1 + "<br />");
+        document.write(yazi2 + "<br />");
+
+        var yeni1 = yazi1.toUpperCase();
+        var yeni2 = yazi2.toLowerCase();
+        document.write(yeni1 + "<br />");
+        document.write(yeni2 + "<br />" + "<br />" + "<br />");
+
+
+
+        ///////SUB VE SUP
+        var formul = "H2O";
+        document.write(formul + "<br />");
+
+        var dgr1 = "H";
+        var dgr2 = "2";
+        var dgr2islem = dgr2.sub();
+        var dgr3 = "O";
+        document.write(dgr1 + dgr2islem + dgr3 + "<br />" + "<br />" + "<br />");
+
+        var alan = "m2";
+        var dgr4 = "m";
+        var dgr5 = "2";
+        var dgr5islem = dgr5.sup();
+        document.write(alan + "<br />");
+        document.write(dgr4 + dgr5islem + "<br />" + "<br />" + "<br />");
+    </script>
+
+
+
+
+
+
+    <!--var,let,const aynı işlemi yapar
+değişkenlerde türkçe karakter kullanılmaz, rakam ile başlayamaz ama ilk harften sonra kullanılabilir, 
+alt çizgi ve dolar işaretleriyle başlayabilir, büyük harf küçük harf duyarlıdır -->
+
+    <!--sayılar çift tırnak içerisinde yazılırsa yan yana yazar tırnak kullanılmazsa toplar -->
+
+    <!--       
+        *bir değişkenin veri türü typeof ile bulunur.
+        *değişkenin içeriğinin karakter sayısı lenght ile bulunur.
+        *eval() kendisine parametre olarak verilen değerleri js kodlamasına çevirir ve komut gibi çalıştırır.
+        *trim() değişkenin içeriğinde olan başta ve sondaki boşlukları siler.
+        *slice() ve substring() veriecek olan parametrelerle değişken içeriğini kopyalar 
+        ikisinde de iki parametre başlg ve bitş kullanılabilir substr() de kopyalama yapar farkı ilk paramtr başlngç ikincisi kaç krkt
+        kopyalanacağını belirtir ve eksi değer de alıp sondan kopyalama yapabilir.
+        *concat() üzerinde çalışılan değişkene parametrik olarak verilen değişkne/leri dahil eder.
+        *repeat() kendisine parametre olarak verien değere göre değişke içeriğini kopyalayıp geri döndürür.
+        *toString() ile değişkenin veri türü string(metin) türüne döner.
+        *string() değişken içeriğini string türüne dönüştürür.
+        *number() değişken içeriğini number türüne dönüştürür.
+        *valueof()ilgili değişkeni tam anlamıyla aktarmayı sağlar.
+        *indexof() değişken içerisinde istenen parametrenin indexini bulur.
+        *lastindexof() değişken içerisinde istenen parametrenin en son bulunduğu sırayı verir.
+        *search() değişken içerisinde istenen parametrenin ilk bulunduğu sırayı verir.
+        *include() değişken iöerisinde verilen parametrenin olup olmadığını kontrol edip boolean türünde dönüş yapar büyük harf küçük harf duyarlı.
+        *startswith() kendisine verilen parametreler doğrultusunda değişkenin onunla başlayıp başlamadığını kontrol eder.
+        *endswith() kendisine verilen parametreler doğrultusunda değişkenin onunla bitip bitmediğini kontrol eder.
+        *match() kendisine verilen parametreye göre değişkenin içeriğinde arama yapıp ekrana yazdırır ve düzenli ifade alabilir
+        (g-hepsini yazdırır, i-b harf k harf ayırt etmez)
+        *replace() kendisine verilen parametreye göre değişkenin içeriğinde değişiklik yapar iki parametre alır ve düzenli ifade alabilir
+        *split() bir değişkenin karakterlerini bölümleyerek dizi oluşturur.
+        *localCompare() iki değişkenin unicode larını karşılaştırır ilk değişken ikinciden önce geliyorsa -1 eşitse 0 sonra gelirse 1 yazdırır.
+        *charAt() üzerinde çalışılan değişkenin içerisinden kendisine parametre olarak verilen index sayısıyla o sayıyı karşılık gelen içeriği verir.
+         *charCodeAt() üzerinde çalışılan değişkenin içerisinden kendisine parametre olarak verilen index sayısıyla 
+         o sayıyı karşılık gelen içeriğin unicode değerini verir.
+         *fromCharCode() kendisine parametre olarak verilen unicode değerinin karşılığını ekrana yazdırır. Çoklu değer alabilir
+         *encodeURI() değişken içeriğinde kodlamaya dahil edilmeyen karakterlerin dışında kalanları UTF-8(unicode) koduna dönüştürür
+         Dahil edilmeyen karakterler: 0123456789 / abcdefghijklmnopqrstuvwxyz ve büyük harflerle / ;:/*@?=+-$,#_\&%'
+         *decodeURI() değişken içerisindeki özel karakterleri UTF-8 kodlamasına dönüştürülmüş karakterini çüzmleyerek ekrana yazdırır.
+         *encodeURIcomponent ve decoURIcomponent de aynı işlevleri görür tek farkı dahil edilmeyen karakterlerdir
+        Dahil edilmeyen karakterler: 0123456789 / abcdefghijklmnopqrstuvwxyz ve büyük harflerle / /@?+-,_'.()
+        *escape() değişken içeriğinde kodlamaya dahil edilmeyen karakterlerin dışında kalanları UTF-8(unicode) koduna dönüştürür
+         Dahil edilmeyen karakterler: 0123456789 / abcdefghijklmnopqrstuvwxyz ve büyük harflerle / @ - _ . * + /
+         *unescape() değişken içerisindeki özel karakterleri UTF-8 kodlamasına dönüştürülmüş karakterini çüzmleyerek ekrana yazdırır.
+         Dahil edilmeyen karakterler: 0123456789 / abcdefghijklmnopqrstuvwxyz ve büyük harflerle / @ - _ . * + /
+         *toUpperCase() değişken içerisindeki metnin tamamını büyük harflerle yazıp ekranda gösterir.
+         *toLowerCase() değişken içerisindeki metnin tamamını küçük harflerle yazıp ekranda gösterir.
+         *toLocalUpperCase ve toLocalLowerCase değişken içerisindeki metnin tamaı tarayıcı locasyonuna/diline göre büyük harf küçük harfe dönüştürür.
+         *sub() değişken içerisinde istenen karakterin alt simge olmasını sağlar.
+         *sup() değişken içerisinde istenen karakterin üst simge olmasını sağlar.
+         *big() değişken içerisindeki metnin yazı fontunu büyütür.
+         *small() değişken içerisindeki metnin yazı fontunu küçültür.
+         *bold() değişken içerisindeki metnin yazı fontunu kalınlaştırır.
+         *italics() değişken içerisindeki metnin yazı fontunu italik hale getirir.
+         *strike() değişken içerisindeki metni üzeri çizili olarak ekrana yazar.
+         *fixed() değişken içerisindeki metnin yazı fontunu teletype(daktilo) hale getirir.
+         *fontcolor() değişken içerisindeki metnin yazı rengini değiştirir(varsayılan renk yeşildir). #FF9900
+         *fontsize() değişken içerisindeki metnin yazı fontunu ayarlar max=7.
+         *anchor() değişkene çapa (<a>....</a>) tanımlaması yapar aynı zamanda çapaya name değeri atar
+         *link() değişkene link ataması yapabilir
+
+
+
+         
+
+
+
+
+    -->
+</body>
+
+</html>
