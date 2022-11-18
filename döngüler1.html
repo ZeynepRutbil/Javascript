@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="tr-TR">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" <title>
+    </title>
+
+    <link type="text/css" rel="stylesheet" href="">
+    <!--bu satır dışarıdan css dosyası ekleme satırı  -->
+
+</head>
+
+<body>
+    <script type="text/javascript" lang="javascript">
+        ///////WHILE
+        var baslangic = 0;
+        while (baslangic <= 44) { // 0dan 44e kadar artırarak yazdırır
+            document.write(baslangic);
+            baslangic++; //önemli kısmı unutma! sonradan arttırma operatörü
+        }
+
+        document.write("<br />");
+
+        var bslngc = 88;
+        while (bslngc >= 0) {
+            document.write(bslngc);
+            bslngc--;
+        }
+
+        document.write("<br />");
+        /////DO WHILE
+        var say = 0;
+        do {
+            document.write(say);
+            say++;
+        } while (say <= 99);
+
+
+        document.write("<br />");
+        ///////FOR
+        for (var sayi = 0; sayi <= 44; sayi++) {
+            document.write(sayi);
+        }
+        document.write("<br />");
+
+
+        /////FOR IN
+        var orn = ["XX", "YY", "ZZ"];
+        document.write(orn + "<br />");
+        var sonucd;
+        for (sonucd in orn) {
+
+        }
+
+        document.write("<br />");
+        ////BREAK
+        for (var prmt = 0; prmt <= 10; prmt++) {
+            document.write(prmt);
+            if (prmt == 7) {
+                break;
+            }
+        }
+        document.write("<br />");
+
+
+
+        ///////CONTINUE
+        var prmt1 = 0;
+        while (prmt1 <= 44) {
+            if (prmt1 == 24) { //24ü yazdırmaz
+                prmt1++;
+                continue;
+            }
+
+
+            document.write(prmt1);
+            prmt1++;
+        }
+    </script>
+    <!--
+        *while ve do while aynı işlemi farklı kalıplar yazarak yapar
+        *for: 3 parametre alır ve çalışır
+        *for in: nesneler ve diziler için kullanılır
+        *break: döngüyü sonlandırır.
+        *continue: döngünün o anki işlemi sonandırarak başa dönmesini sağlar
+        
+    -->
+
+
+</body>
+
+</html>
