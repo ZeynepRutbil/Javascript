@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="tr-TR">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" <title> </title>
+
+    <link type="text/css" rel="stylesheet" href="">
+    <!--bu satır dışarıdan css dosyası ekleme satırı  -->
+
+</head>
+
+<body>
+    <script type="text/javascript" lang="javascript">
+        ////////////DİZİ OLUŞTURMA YÖNTEM 1 köşeli parantez
+        var isimler = ["XX", "YY", "ZZ", "WW"];
+        document.write(isimler[0] + "<br />");
+        document.write(isimler[1] + "<br />");
+        document.write(isimler[2] + "<br />");
+        document.write(isimler[3] + "<br />");
+        document.write(isimler + "<br />");
+
+
+
+        ////////DİZİ OLUŞTURMA YÖNTEM 2 normal parantez
+        var isimler2 = new Array("XX", "YY", "ZZ");
+        document.write(isimler2 + "<br />");
+
+        /////TEK SATIRDA BİRDEN FAZLA DİZİ OLUŞTURMA
+        var renk = ["BEYAZ", "SİYAH"],
+            sayilar = [1, 2, 3];
+        document.write(renk + "<br />");
+        document.write(sayilar + "<br />");
+
+
+        ////İNDEXE GÖRE İÇERİK DEĞİŞTİRME
+        var araclar = ["Araba", "Uçak", "Tren"];
+        araclar[2] = "Gemi";
+        document.write(araclar + "<br />");
+        document.write(araclar[0] + "<br />");
+        document.write(araclar[1] + "<br />");
+        document.write(araclar[2] + "<br />");
+
+
+        /////ÇOK BOYUTLU (İÇ İÇE) DİZİLER
+        var harfler = ["A", "B", "C", "D", "E", ["X", "Y", "Z"], "F", "G", "H"];
+        document.write(harfler + "<br />");
+        document.write(harfler[0] + "<br />");
+        document.write(harfler[1] + "<br />");
+        document.write(harfler[2] + "<br />");
+        document.write(harfler[3] + "<br />");
+        document.write(harfler[4] + "<br />");
+        document.write(harfler[5][0] + "<br />");
+        document.write(harfler[5][1] + "<br />");
+        document.write(harfler[5][2] + "<br />");
+        document.write(harfler[6] + "<br />");
+        document.write(harfler[7] + "<br />");
+        document.write(harfler[8] + "<br />");
+
+        /////DİZİLERİ BİRLEŞTİRME
+        var sonuc = [harfler, araclar];
+        document.write(sonuc + "<br />");
+
+
+        /////ISARRAY
+        var dizi1 = ["1", "2", "3"];
+        var dizi2 = (1, 2, 3, 4);
+        var dizi3 = new Array("JS", "PHP", "C");
+        var dizi4 = [];
+        var dizi5 = new Array();
+
+        var sonuc1 = Array.isArray(dizi1);
+        var sonuc2 = Array.isArray(dizi2);
+        var sonuc3 = Array.isArray(dizi3);
+        var sonuc4 = Array.isArray(dizi4);
+        var sonuc5 = Array.isArray(dizi5);
+        document.write(sonuc1 + "<br />");
+        document.write(sonuc2 + "<br />");
+        document.write(sonuc3 + "<br />");
+        document.write(sonuc4 + "<br />");
+        document.write(sonuc5 + "<br />");
+
+
+        //////DİZİLERDE FOR IN DÖNGÜSÜ KULLANIMI
+        var color = ["BEYAZ", "SİYAH", "MAVİ", "GRİ"];
+        var yazdir;
+        for (yazdir in color) {
+            document.write(color[yazdir] + "<br />");
+        }
+
+        //////DİZİLERDE İNDEX İÇİ SİLME
+        var silme = ["XX", "YY", "ZZ", "TT", "KK"];
+        document.write(silme + "<br />");
+        delete silme[2];
+        document.write(silme + "<br />");
+        var silmeislemi = silme.pop()
+        document.write(silme + "<br />"); //dizinin son elemanı silinir
+        document.write(silmeislemi + "<br />"); //dizinin silinen elemanı ekrana yazılır
+        var silmeislemi2 = silme.shift()
+        document.write(silme + "<br />"); //dizinin ilk elemanı silindi
+        document.write(silmeislemi2 + "<br />"); //silinen eleman ekrana yazılır
+        var eklemeislemi = silme.push("WW")
+        document.write(silme + "<br />");
+        var eklemeislemi2 = silme.unshift("TT")
+        document.write(silme + "<br />");
+
+        ///////////////////SLICE
+        var yenidizi = ["A", "B", "C", "D", "E", "F", "G", "H", "R", "V"];
+        document.write(yenidizi + "<br />");
+        var kopyadizi = yenidizi.slice(3, 5); //3. indexten 5. indexe kadar kopyala
+        document.write(kopyadizi + "<br />");
+        yenidizi.copyWithin(3, 0, 2); //3. indisin önüne 0 dan 2ye kadar kopyala
+        document.write(yenidizi + "<br />");
+        yenidizi.fill("P", 2, 8); //2 ve 8 arası tüm değerleri P yap
+        document.write(yenidizi + "<br />");
+        var birlesmidizi = color.concat(yenidizi, silme[3][5]); //3 diziyi de birleştirip yeni dizi oluşturur silme dizisinin bazı elemanlarını aldı
+        document.write(birlesmidizi + "<br />");
+
+
+        /////JOIN TOSTRING
+        var elmn = ["JAVA", "SCRIPT", "EĞİTİM", "PROGRAMI"];
+        document.write(elmn + "<br />");
+        var duznle = elmn.join("ve");
+        document.write(duznle + "<br />");
+        var duznle2 = elmn.toString();
+        document.write(duznle2 + "<br />");
+
+
+        //////////FIND
+        function bul(eleman1, sira1, referans1) {
+            return sira1 == 3
+        }
+        var bul1 = ["AA", "BB", "CC", "DD", "EE"];
+        document.write(bul1 + "<br />");
+        var sonuc11 = bul1.find(bul);
+        document.write(sonuc11 + "<br />");
+    </script>
+    <!--
+    diziler: bir değişken içerisinde toplanmış her türden bilgi ve veriyi depolamak için kullanılan sıralı veri gruplarıdır
+    index/indis: veri sırasıdır ve sıfırdan başlar
+    isArray: içeriğin dizi olup olmadığını kontrol eder boolean sonucu döndürür.
+    lenght: dizi içerisindeki eleman sayısını verir.
+    delete: dizi içerisinde belirtilen indexin içeriğini temizler ama index tanımsız olarak kalır silinmez
+    pop() dizinin son elemanını siler ve onu ekrana yazdırır
+    shift() dizinin ilk elemanını siler ve ekrana yazdırır.
+    push() dizinin sonuna eleman/lar eklenmesini sağlar
+    unshift() dizinin başına eleman/lar eklenmesini sağlar
+    splice() diziden eleman silme ve ekleme işlemlerini yapar
+    slice() kendisine parametre olarak verilen indexlere göre dizi içeriğini kopyalayarak yeni bir dizi oluşturur 
+    copywithin() kendisine verien 3 parametreye göre dizi içeriğini kopyalayıp tekrar yazdırır ve dizinin eleman sayısında değişiklik yapmaz
+    1. parametre: hedef yani kopyalanacak index sayısı
+    2. paramatre:başlangıç
+    3. parametre: bitiş
+    fill() kendisine verilen 3 parametreye göre kendisine verilen değeri verilen indislerle değiştirir.
+    concat() bir diziyle diğer bir dizinin elemanlarını birleştirerek yeni bir dizi oluşturur.
+    join() kendisine parametre olarak verilen ayracı ile dizideki nersneler arasına yazarak string ifade oluşturur.
+    toString() dizideki tüm elemanları düz metin şeklinde yazdırır.
+    valueof() bir dizinin tam anlamıyla aktarımını sağlar.
+    indexof() kendisine parametre olarak verilen değeri dizi içerisinde arar ve ilk içeren indexin numarasını ekrana yazdırır.
+    lastindexof() kendisine parametre olarak verilen değeri dizi içerisinde arar ve ilk içeren indexin numarasını ekrana yazdırır.
+    find() ve findindex() kendisine fonksiyon içerisinde parametre olarak verilen değeri dizi içerisinde arar ve ilk bulduğu değeri ekrana yazdırır.
+    3 parametre kullanır
+    1. parametre: dizi elemanı
+    2. parametre: index sayısı
+    3. parametre: değişken referansı
+    reduce() kendisine fonksiyon içerisinden parametre olarak verilen değerleri soldan sağa toplayıp/birleştirip ekranda gösterir
+    1. parametre: dizi içerisinde mevcut değer öncesindeki değerlerin toplamı/birleşimi
+    2. parametre: dizi elemanı
+    3. parametre: indexs sayısı
+    4. parametre: referans
+    reduceright() aynı işlemi sağdan sola yapar
+    reverse(): dizi içerisindeki sıralamayı tersine çevirir
+
+-->
+
+</body>
+
+</html>
