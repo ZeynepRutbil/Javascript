@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="tr-TR">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" <title>
+    </title>
+
+    <link type="text/css" rel="stylesheet" href="">
+    <!--bu satır dışarıdan css dosyası ekleme satırı  -->
+
+</head>
+
+<body>
+    <script type="text/javascript" lang="javascript">
+        ////FONKS OLUŞTURMA
+        var bir = "Javascript ";
+        var iki = "Eğitim Seti";
+
+        function yazdir() {
+            document.write(bir + iki + "<br />");
+        }
+        var yazdir2 = function() {
+            document.write(bir + iki + "<br />");
+        }
+        yazdir();
+        yazdir2();
+
+        /////RETURN: değer döndürmek ve fonksiyonu sonlandırmak için kullanılır
+        function demo() {
+            var isim1 = "XXX";
+            var isim2 = "YYY";
+            return isim1; // sadece bir değer gösterebilir
+        }
+        var sonuc = demo();
+        document.write(sonuc + "<br />");
+        /////////////////////////////////////////////////////////
+        var demo1 = function() {
+            var isim3 = "zzz";
+            var isim4 = "ttt";
+            var çoklu = [isim3, isim4];
+            return çoklu; //daha fazla değer gösterebilir
+        }
+        var sonuc1 = demo1();
+        document.write(sonuc1 + "<br />");
+
+        ///////////////////////////////////////////////////////////
+        function demo2() {
+            document.write("A" + "<br />");
+            document.write("A" + "<br />");
+            document.write("A" + "<br />");
+            return; ///kendinden sonraki satırları yazdırmaz
+            document.write("A" + "<br />");
+            document.write("A" + "<br />");
+        }
+        demo2();
+
+
+        ///KOŞULA BAĞLI FONKSİYON ÇAĞIRMA
+        var cgr = "Günler";
+        if (cgr == "Renkler") {
+            function test() {
+                document.write("Sarı", "Beyaz" + "<br />");
+
+            }
+        } else if (cgr == "Sayı") {
+            function test() {
+                document.write("1", "2" + "<br />");
+            }
+        } else if (cgr == "Günler") {
+            function test() {
+                document.write("Pazartesi", "Salı", "Cuma" + "<br />");
+            }
+        } else {
+            function test() {
+                document.write("Burada Bitti" + "<br />");
+            }
+        }
+        test();
+
+
+
+        ///////FONKSİYONU OTOMATİK ÇALIŞTIRMA
+        //ilk yöntem
+        (function test1() {
+            document.write("Merhaba" + "<br />");
+        })();
+
+        //ikinci yöntem
+        var test2 = function() {
+            document.write("Merhaba" + "<br />");
+        }();
+
+
+        /////FONKSİYONA PARAMETRE ATAMA
+        function test3(ad) {
+            document.write("Merhaba " + ad + "<br />");
+        }
+        test3("WW"); //burada parantez içine yazılan ad yerine geçer
+
+        function islem(sayi1, sayi2) {
+            var topla = sayi1 + sayi2;
+            document.write(topla + "<br />");
+        }
+        islem(5, 8);
+
+        var islem2 = function(sayix, sayiy) {
+            var cikar = sayix - sayiy;
+            document.write(cikar + "<br />");
+        }
+        islem2(19, 6);
+
+
+        //////FONKSİYONA VARSAYILAN DEĞER ATAMASI
+        function hesap(tutar, kdv = 11) { //kdv oranını varsayılan olarak yazdık ama ikinci parametre yazılırsa bu varsayılan prtmre geçersiz olur
+            var kdvtutar = (tutar / 100) * kdv;
+            var nettutar = tutar + kdvtutar;
+            document.write("Gelen Tutar:" + tutar + "<br />");
+            document.write("Gelen Tutarın Kdv'si:" + kdvtutar + "<br />");
+            document.write("Toplam Tutar Tutar:" + nettutar + "<br />");
+
+        }
+        hesap(500);
+
+
+        ////OTOMATİK ÇALIŞAN FONKSİYONA PARAMETRE ATAMA
+        (
+            function text1(parametre1, parametre2) {
+                document.write(parametre1 + "<br />");
+                document.write(parametre2 + "<br />");
+
+            }
+        )("Merhaba", "Dünya")
+
+
+        //////FONKSİYONLAR ARASI DEĞER DÖNDÜRME
+        function parahesabı(birim, tutar1) {
+            if (birim == "DOLAR") {
+                var kur = 3;
+            } else if (birim == "TL") {
+                var kur = 1;
+            } else if (birim == "EURO"); {
+                var kur = 5;
+            }
+            return hesapla(birim, tutar1);
+        }
+
+        function hesapla(gelenbirim, gelentutar1) {
+            var hesapyap = gelenbirim * gelentutar1;
+            document.write(hesapyap + "<br />");
+        }
+        parahesabı("TL", 400);
+
+
+        /////ÇOK BOYUTLU (İÇ İÇE) FONKSİYONLAR
+        function ilkfnks(bir1, iki2) {
+            function ikincifnks(birr, ikii) {
+                document.write(birr + "<br />");
+                document.write(ikii + "<br />");
+            }
+            return ikincifnks(bir1, iki2);
+        }
+        ilkfnks(3, 5);
+
+
+
+        function test4(parametre3, parametre4) {
+            function test5(islem1) {
+                var islemyap = islem1 * islem1;
+                document.write(islemyap + "<br />");
+            }
+            return test5(parametre3) + test5(parametre4);
+        }
+        test4(3, 9);
+
+
+
+        //////ÇOK BOYUTLU FONKSİYNA DIŞARIDAN PARAMETRE ATAMA
+        function first(a1) {
+            function second(b1) {
+                function thirty(c1) {
+                    return a1 + b1 + c1;
+                }
+                return thirty;
+            }
+            return second;
+        }
+        var final = first(5)(10)(15);
+        document.write(final + "<br />");
+
+
+        ///////KENDİ KENDİNİ ÇAĞIRAN FONKSİYON
+        function cagir(baslangicdeger, bitisdeger) {
+            if (baslangicdeger <= bitisdeger) {
+                document.write("Merhaba Dünya" + "<br />");
+                baslangicdeger += 1;
+                cagir(baslangicdeger, bitisdeger);
+            } else {
+                return;
+            }
+        }
+        cagir(1, 3);
+    </script>
+
+
+</body>
+
+</html>
