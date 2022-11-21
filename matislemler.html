@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="tr-TR">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" <title> </title>
+
+    <link type="text/css" rel="stylesheet" href="">
+    <!--bu satır dışarıdan css dosyası ekleme satırı  -->
+
+</head>
+
+<body>
+    <script type="text/javascript" lang="javascript">
+        ////TOPLAMA
+        var deger1 = 5;
+        var deger2 = 8;
+        var topla = deger1 + deger2;
+        document.write(topla + "<br />");
+        document.write(5 + 8 + "<br />")
+        var islem = (5 + 8);
+        document.write(islem + "<br />");
+
+        //////ATAMALI TOPLAMA 
+        deger1 += deger2;
+        document.write(deger1 + "<br />");
+
+        //////MODÜLÜS(KALAN)
+        document.write(10 % 7 + "<br />");
+
+        ////BİR SAYININ ÜSSÜNÜ ALMA
+        document.write(2 ** 10 + "<br />");
+
+        ////BİR SAYIYI ARTTIRARAK VE AZALTARAK YAZDIRMA
+        var sayi = 10;
+        document.write(sayi + "<br />");
+        sayi++;
+        document.write(sayi + "<br />");
+        sayi++;
+        document.write(sayi + "<br />");
+        sayi--;
+        document.write(sayi + "<br />");
+        sayi--;
+        document.write(sayi + "<br />");
+
+
+        /////MAX_VALUE: JS'te yazılabilecek pozitif en büyük sayıyı yazdırır.  MIN_VALUE: JS'te yazılabilecek en küçük negatif sayıyı yazdırır.
+        // maxvalue sayısına işlem yapılıp arttırılmak istenirse pozitifinfinity yazıır ekrana
+        // minvalue değerine işlem yapılıp eksiltilmek istenirse ekrana negatifinfinity yazar yani neg.sonsuzluk
+        var enbsayi = Number.MAX_VALUE;
+        document.write(enbsayi + "<br />");
+        var enksayi = Number.MIN_VALUE;
+        document.write(enksayi + "<br />");
+
+        //// NAN: Değerlerden biri veya tamamı sayı değilse işlem sonucu ekranda nan olarak yazar
+        document.write("xxx" * 5 + "<br />");
+
+        /////E : Euler sayısını ekrana yazdırır.
+        var sayi1 = Math.E;
+        document.write(sayi1 + "<br />");
+
+        ////LN2 : 2 sayısının doğal logaritmasını yazdırır.
+        var sayi2 = Math.LN2;
+        document.write(sayi2 + "<br />");
+
+        ////LN10: 10 sayısının doğal logritmasını yazdırır.
+        var sayi3 = Math.LN10;
+        document.write(sayi3 + "<br />");
+
+        //// PI: pi sayısını yazdırır.
+        var pisayi = Math.PI;
+        document.write(pisayi + "<br />");
+
+        ////SQRT2: 2 sayisinin karekökünü yazdırır. SQRT1_2: 1/2 nin karekök değerini yazdırır.
+        var karekkök = Math.SQRT2;
+        document.write(karekkök + "<br />");
+
+
+        /////ISNAN(): içeriğin sayı lup omadığına bakar ve boolean olarak cevap verir.
+        var say1 = "Javascript ";
+        var say2 = 5;
+        var say3 = 5.8;
+        var say4 = NaN;
+        var kontrol1 = Number.isNaN(say1); //içeriğin nan olup olmadığına bakar
+        var kontrol2 = Number.isNaN(say2);
+        var kontrol3 = Number.isNaN(say3);
+        var kontrol4 = Number.isNaN(say4);
+        document.write(say1 + ":" + kontrol1 + "<br />");
+        document.write(say2 + ":" + kontrol2 + "<br />");
+        document.write(say3 + ":" + kontrol3 + "<br />");
+        document.write(say4 + ":" + kontrol4 + "<br />");
+
+        var kontrol11 = isNaN(say1); //içeriğin sayı olup olmadığına bakar sayı ise false değilse true döndürür.
+        var kontrol22 = isNaN(say2);
+        var kontrol33 = isNaN(say3);
+        var kontrol44 = isNaN(say4);
+        document.write(say1 + ":" + kontrol11 + "<br />");
+        document.write(say2 + ":" + kontrol22 + "<br />");
+        document.write(say3 + ":" + kontrol33 + "<br />");
+        document.write(say4 + ":" + kontrol44 + "<br />");
+
+        /////ISFINITE: kendisine parametre olarak verilen sayının maxvalue ve minvalue arasında olurp olmadığını kontrol eder
+        //ISINTEGER() kendisine parametre olarak verilen sayının tam sayı olup olmadığını kontrol eder
+        //ISSAFEINTEGER(): kendisine parametre olarak verilen sayının güvenli bir tam sayı olup olmadığını kontrol eder
+        var say5 = 100;
+        var say6 = Number.MAX_VALUE * 2;
+        var say7 = -Number.MIN_VALUE * 2;
+        var kontrol5 = Number.isFinite(say5);
+        var kontrol6 = Number.isFinite(say6);
+        var kontrol7 = Number.isFinite(say7);
+        document.write(say5 + ":" + kontrol5 + "<br />");
+        document.write(say6 + ":" + kontrol6 + "<br />");
+        document.write(say7 + ":" + kontrol7 + "<br />");
+
+
+        //////TOFIXED(): kendisine parametre olarak verilen değere göre ondalıklı sayının virgüden sonra kaç basamak yazılacağını belirler
+        //TOPRECISION():kendisine parametre olarak verilen değere göre sayının kaç basamak yazılacağını belirler (nokta hariç)
+        //TOEXPONENTIAL:  kendisine parametre olarak verilen değere göre ondalıklı sayının virgüden sonra kaç basamak yazılacağını belirler
+        //kalan sayıyı üstel hale getirir.
+        var say8 = 4.858589632174;
+        document.write(say8 + "<br />");
+        var kontrol8 = say8.toFixed(5);
+        document.write(kontrol8 + "<br />");
+        var kontrol9 = say8.toExponential(3);
+        document.write(kontrol9 + "<br />");
+
+        ////////PARSEINT():kendisine parametre olarak verilen değerleri tam sayıya çevirir +,- ve rakam dışında bir ifade görünce durur.
+        ///////PARSEFLOAT(): kendisine parametre olarak verilen değerleri ondalık sayıya çevirir +,-,. ve rakam dışında bir ifade görünce durur.
+        ///////TOSTRING(): kendisine parametre olarak verilen değerleri string türüne çevirir(sayıları)
+        /////TOSTRING(): Değişken içerisindeki değerleri mutalak olarak string türüne çevirir
+        /////TONUMBER(): Değişken içerisindeki değerleri mutalak olarak number türüne çevirir
+        //////VALUEOF(): değişken içeriğini başka bir değişkene tam anlamıyla aktarır.
+        ///////CEIL(): Kendisine parametre olarak verilen ondalık  değeri yukarı yuvarlar
+        ///////FLOOR(): Kendisine parametre olarak verilen ondalık değeri aşağı yuvarlar
+        ///////ROUND(): Kendisine parametre olarak verilen ondalık değeri kendisine en yakın değere yuvarlar
+        ///////TRUNC(): Kendisine parametre olarak verilen ondalık değerin virgülden sonrasını siler
+        //////RANDOM(): 0-10 arasında rastgele bir sayı üretir
+        //////SIGN():Kendisine parametre olarak verilen değerlerin işaretlerini ekrana yazdırır poz:1 neg:-1 işaretsiz:0
+        /////MIN(): Kendisine parametre olarak verilen değerlerin içerisinden en küçüğünü ekrana yazdırır
+        /////MAX(): Kendisine parametre olarak verilen değerlerin içerisinden en büyüğünü ekrana yazdırır
+        //////POW(): Kendisine parametre olarak verilen 2 değerin üssünü bulur ilk yazılan taban diğeri üs olur
+        //ABS(): Kendisine parametre olarak verilen değerin mutlak değer halini yazdırır
+        //SQRT(): Kendisine parametre olarak verilen değerin karekök değeri halini yazdırır
+        //CBRT(): Kendisine parametre olarak verilen değerin küp kök değeri halini yazdırır
+        //SIN(): Kendisine parametre olarak verilen değerin sinüs değeri halini yazdırır
+        //COS(): Kendisine parametre olarak verilen değerin cosinüs değeri halini yazdırır
+        //LOG(): Kendisine parametre olarak verilen değerin dual logaritma değeri halini yazdırır
+    </script>
+
+
+</body>
+
+</html>
