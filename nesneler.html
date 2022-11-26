@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="tr-TR">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" <title> </title>
+
+    <link type="text/css" rel="stylesheet" href="">
+    <!--bu satır dışarıdan css dosyası ekleme satırı  -->
+
+</head>
+
+<body>
+    <script type="text/javascript" lang="javascript">
+        var bilgiler = {
+            isim: "Zeynep",
+            soyisim: "Rutbil"
+        }; //nesne oluşturma 1. yöntem
+        var kisiad = bilgiler.isim; //nesne çağırma
+        var kisisoyad = bilgiler.soyisim;
+        document.write(kisiad + " " + kisisoyad + "<br />");
+
+        ///////////////////////////////////////////////////////////////
+        var bilgiler1 = new Object(); //nesne oluşturma 2. yöntem
+        bilgiler1.isim1 = "XXX";
+        bilgiler1.soyisim1 = "ZZZ";
+        var isimyaz = bilgiler1.isim1;
+        var soyisimyaz = bilgiler1.soyisim1;
+        document.write(isimyaz + " " + soyisimyaz + "<br />");
+
+        ////////////////////////////////////////////////////////////
+        function bilgiler2() { //fonksiyon ile nesne oluşturma
+            this.isim2 = "YYY";
+            this.soyisim2 = "TTT";
+        }
+        var nesnebilgiler2 = new bilgiler2();
+        document.write(nesnebilgiler2.isim2 + " " + nesnebilgiler2.soyisim2 + "<br />"); //fonsiyon içerisinden çağırma
+
+        ///////////////////////////////////////////////////////
+        var renkler = {
+                birincirenk: "beyaz",
+                ikincirenk: "kırmızı"
+            },
+            sayilar = {
+                ilksayi: 1,
+                ikincisayi: 4
+            }; //tek işlemde birden fazla nesne oluşturma
+        var renkyaz1 = renkler.birincirenk;
+        var renkyaz2 = renkler.ikincirenk;
+        var sayiyaz1 = sayilar.ilksayi;
+        var sayiyaz2 = sayilar.ikincisayi;
+        document.write(renkyaz1 + "<br />");
+        document.write(renkyaz2 + "<br />");
+        document.write(sayiyaz1 + "<br />");
+        document.write(sayiyaz2 + "<br />");
+
+        //////////////////////////////////////////////////////////
+        //renkler nesnesini başka bir değişkene aktarma
+        var ornek = renkler;
+        var renkyz = ornek.ikincirenk;
+        document.write(renkyz + "<br />");
+
+        ///////////////////////////////////////////////////////////
+        //nesne oluşturduktan sonra içeirğini oluşturmak
+        var isimler = {};
+        isimler.birinci = "XYZ";
+        isimler.ikinci = "WRT";
+        document.write(isimler.birinci + " " + isimler.ikinci + "<br />");
+
+        /////////////////////////////////////////////////////////////////////// nesne içerisinde özelik değeri değiştirme
+        var yazi = {
+            ders: "Javascript Eğitim Serisi"
+        };
+        document.write(yazi.ders + "<br />");
+        yazi.ders = "PHP Eğitim Seti";
+        document.write(yazi.ders + "<br />");
+
+        //////////////////////////////////////// nesne içerisinde fonksiyon çalıştırma
+        var bilgi = {
+            ad: "xxx",
+            soyad: "yyy",
+            detay: function() {
+                this.yas = 22,
+                    this.meslek = "zzz"
+            }
+
+        };
+        delete bilgi.soyad;
+
+
+        var adyaz = bilgi.ad;
+        var soyadyaz = bilgi.soyad;
+        bilgi.detay();
+        var yasyaz = bilgi.yas;
+        var meslekyaz = bilgi.meslek;
+        document.write("İsim:" + adyaz + "<br />");
+        document.write("Soyisim:" + soyadyaz + "<br />");
+        document.write("Yaş:" + yasyaz + "<br />");
+        document.write("Meslek:" + meslekyaz + "<br />");
+
+
+
+        ////////////////////////////////////// return ile nesne içindeki fonksiyone erişim
+        var isimlerr = {
+            detaylar: function() {
+                var bir = 1;
+                var iki = 2;
+                var hepsi = bir + " " + iki;
+                return hepsi;
+            }
+        }
+        var yazdir = isimlerr.detaylar();
+        document.write(yazdir + "<br />");
+
+        //////////////////////////////////////// parametre vererek nesne oluşturma
+        var kullanıcı = {
+            kullanıcıbilgileri: function(isim, soyisim, yas) {
+                var isimicerik = isim;
+                var soyisimicerik = soyisim;
+                var yasicerik = yas;
+                var sonuc = "Merhaba," + " " + "Kullanıcı ad ve soyadı:" + isimicerik + " " + soyisimicerik + "<br />" + "Kullanıcı yaşı:" + yasicerik;
+                return sonuc;
+            }
+
+        }
+        var yazdir = kullanıcı.kullanıcıbilgileri("Zeynep Sultan", "Rutbil", 23);
+        document.write(yazdir + "<br />");
+
+
+        ////////(///////////////////////////////PROTOTİP OLUŞTURMA
+        function toplama(sayi1, sayi2, sayi3, sayi4, sayi5) {
+            this.deger1 = sayi1;
+            this.deger2 = sayi2;
+            this.deger3 = sayi3;
+            this.deger4 = sayi4;
+            this.deger5 = sayi5;
+
+        }
+        toplama.prototype.islem = function() {
+            return this.deger1 + this.deger2 + this.deger3 + this.deger4 + this.deger5;
+        }
+
+        var islemsonucu = new toplama(4, 58, 98, 74, 3);
+        var ekranayaz = islemsonucu.islem();
+        document.write(ekranayaz + "<br />");
+
+
+
+        /////////////////////////////////// PROTO KULLANMA
+        function denme() {
+            this.isimm = "XXX";
+        }
+        denme.prototype.yazmak = function denme2() {
+            this.ifade = "Merhaba Dünya";
+        }
+        var nesneler = new denme();
+        nesneler.__proto__.yazmak();
+        var isimyazz = nesneler.isimm;
+        var ifadeyaz = nesneler.ifade;
+        document.write(isimyazz + "<br />");
+        document.write(ifadeyaz + "<br />");
+
+
+        /////////////////////////////HASOWNPROPERTY: özelliğin kullanılıp kullanılmadığını kontrol eder boolean türünde dönüş yapar
+        var isimlistesi = {
+            isim: "XXX",
+            soyisim: "YYY"
+        };
+        var isimkontrol = isimlistesi.hasOwnProperty("isim");
+        document.write(isimkontrol + "<br />");
+        //propertyIsEnumarabe: özelliğin kullanılıp kullanılmadığını ve numaralandırılabileceğini kontrole eder
+        var isimkontrol1 = isimlistesi.propertyIsEnumerable("soyisim");
+        document.write(isimkontrol1 + "<br />");
+    </script>
+
+
+</body>
+
+</html>
