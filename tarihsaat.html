@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="tr-TR">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" <title> </title>
+
+    <link type="text/css" rel="stylesheet" href="">
+    <!--bu satır dışarıdan css dosyası ekleme satırı  -->
+
+</head>
+
+<body>
+    <script type="text/javascript" lang="javascript">
+        var zaman = new Date(); // anın saatini zamanını yazar ekrana
+        document.write(zaman + "<br />");
+        var zaman1 = new Date(1999, 08, 25, 21, 30); // istenilen zamanı yazar(yıl-ay-gün-saat-dakika-saniye)
+        document.write(zaman1 + "<br />");
+
+        var yil = zaman.getFullYear();
+        var ay = zaman.getMonth();
+        if (ay == 10) {
+            document.write("Kasım" + "<br />");
+        }
+        var gün = zaman.getDate();
+        var haftagün = zaman.getDay();
+        if (haftagün == 4) {
+            document.write("Perşembe" + "<br />");
+        }
+        var saat = zaman.getHours();
+        var dakika = zaman.getMinutes();
+        var saniye = zaman.getSeconds();
+        var salise = zaman.getMilliseconds();
+        var evrenselyıl = zaman.getUTCFullYear();
+        document.write(yil + "<br />");
+        document.write(ay + "<br />");
+        document.write(gün + "<br />");
+        document.write(haftagün + "<br />");
+        document.write(saat + "<br />");
+        document.write(dakika + "<br />");
+        document.write(saniye + "<br />");
+        document.write(salise + "<br />");
+        document.write(evrenselyıl + "<br />");
+
+
+        zaman.setFullYear(1999);
+        zaman.setMonth(7);
+        zaman.setDate(25);
+        zaman.setHours(21, 30, 25, 785);
+        document.write(zaman + "<br />");
+
+
+        var zamandamga = zaman.getTime();
+        document.write(zamandamga + "<br />");
+
+        zaman.setTime(4569871236); // bu zaman damgasının tarihi
+        document.write(zaman + "<br />");
+        var zamandamga1 = Date.now(); // şu anın zaman damgası
+        document.write(zamandamga1 + "<br />");
+        var evrdamga = Date.UTC(2022, 4, 19); //bu tarihin zaman damgası
+        document.write(evrdamga + "<br />");
+        var fark = Date.parse("August 25,1999");
+        document.write(fark + "<br />");
+        var fark1 = zaman.getTimezoneOffset(); // şu anki zaman ile GMT farkı
+        document.write(fark1 + "<br />");
+
+
+        var yenizaman = zaman.toLocaleString();
+        document.write(yenizaman + "<br />");
+        var yenizaman1 = zaman.toUTCString();
+        document.write(yenizaman1 + "<br />");
+        var yenizaman2 = zaman.toISOString();
+        document.write(yenizaman2 + "<br />");
+        var yenizaman3 = zaman.toJSON();
+        document.write(yenizaman3 + "<br />");
+        var yenizaman4 = zaman.toDateString();
+        document.write(yenizaman4 + "<br />");
+        var yenizaman5 = zaman.toLocaleDateString();
+        document.write(yenizaman5 + "<br />");
+        var yenizaman6 = zaman.toTimeString();
+        document.write(yenizaman6 + "<br />");
+        var yenizaman7 = zaman.toLocaleTimeString();
+        document.write(yenizaman7 + "<br />");
+    </script>
+    <!--
+        date(): değişken içerisine o günün tarihini ekler manuel olarak da değiştirilebilir
+        getfullyear(): 1000-9999 aralığında yılı depolar
+        getmonth(): 0-11 aralığında ayı depolar
+        getdate(): 1-31 aralığında gün bilgisini depolar
+        getday(): 0-6 aralığında haftanın günlerini depolar (haftanın ilk günü pazardır ve sıra sayısı 0 dır)
+        gethour(): 0-23 aralığında saat bilgisini depolar
+        getminutes(): 0-59 aralığında dakika bilgisini depolar
+        getseconds(): 0-59 aralığında saniye bilgisini depolar
+        getMiliseconds(): 0-999 aralığında milisaniye bilgisini depolar
+        getUTCFullYear(): 1000-9999 aralığında evrensel yıl  bilgisini depolar
+        getUTCMonth(): 0-11 aralığında evrensel ay  bilgisini depolar
+        getUTCdate(): 1-31 aralığında evrensel gün bilgisini depolar
+        getUTCday(): 0-6 aralığında evrensel olarak haftanın günleri bilgisini depolar
+        getUTChour(): 0-23 aralığında evrensel saat bilgisini depolar
+        getUTCminutes(): 0-59 aralığında evrensel dakika bilgisini depolar
+        getUTCseconds(): 0-59 aralığında evrensel saniye bilgisini depolar
+        getUTCMiliseconds(): 0-999 aralığında evrensel milisaniye bilgisini depolar
+        SetFullYear():1000-9999 aralığında yılı depolar parametre verilmeli (yıl-ay-gün)
+        SetMonth(): 0-11 aralığında ay bilgisini depolar parametre verilmeli
+        SetDate():1-31 aralığında gün bilgisini depolar parametre verilmeli
+        SetHours(): 0-23 aralığında saat bilgisini depolar parametre verilmeli(saat-dakika-saniye-milisaniye)
+        SetMinutes():0-59 aralığında dakika bilgisini depolar parametre verilmeli
+        SetSeconds():0-59 aralığında saniye bilgisini depolar parametre verilmeli
+        SetMiliSeconds():0-999 aralığında milisaniye bilgisini depolar parametre verilmeli
+        SetUTCFullYear(): kendisine verilen parametre doğrultusunda evrensel zaman dilimine ait yıl bilgisini depolar 1000-9999 aralığında (yıl-ay-gün)
+        SetUTCMonth(): kendisine verilen parametre doğrultusunda evrensel zaman dilimine ait ay bilgisini depolar 0-11
+        SetUTCDate(): kendisine verilen parametre doğrultusunda evrensel zaman dilimine ait gün bilgisini depolar 0-31
+        SetUTCDay(): kendisine verilen parametre doğrultusunda evrensel zaman dilimine ait hafta günleri bilgisini depolar 0-6
+        SetUTCHour(): kendisine verilen parametre doğrultusunda evrensel zaman dilimine ait saat bilgisini depolar 0-23 (saat-dk-sn)
+        SetUTCMinutes(): kendisine verilen parametre doğrultusunda evrensel zaman dilimine ait dakika bilgisini depolar 0-59
+        SetUTCSeconds(): kendisine verilen parametre doğrultusunda evrensel zaman dilimine ait saniye bilgisini depolar 0-59
+        SetUTCMiliSeconds(): kendisine verilen parametre doğrultusunda evrensel zaman dilimine ait milisaniye bilgisini depolar 0-999
+        getTime(): değişkenin zaman damgasını verir (oluşması üzerinden ne kadar zaman geçmiştir)
+        seTime(): zaman damgasını parametre olarak verince tarih olarak ekrana yazdırır
+        now(): verilen zamanın zaman damgasını yazdırır
+        NOT: GETTİME VE NOW FARKI: GETTIME İÇİN ÜLKELER ARASI ZAMAN FARKI VERMEZ NOW VERİR
+        UTC(): Kendisine verilen parametreye göre evrensel zaman dilimine ait tarihin zaman damgasını yazdırır
+        NOT: ZAMAN DAMGASI BAŞLANGIÇ TARİHİ : 1 OCAK 1970
+        parse(): kendisine parametre olarak verilen tarih doğrultusunda (ay(ingilizce)-gün-yıl) zaman damgası başlangıç tarihi arasındaki farkı verir
+        getTimeZoneOfSet(): kendisine parametre olarak verilen zaman ile 0 zaman dilimi arasındaki saat farkını dk olarak verir
+        toString(): verilen tarihi metin türüne dönüştürür
+        toLocalString(): zamanı string türüne çevirir ve yapısal değişiklik yapar
+        toUTCString(): zamanı string türüne çevirir ve yapısal değişiklik yapar evrensel saat
+        toISOString(): zamanı string türüne çevirir ve yapısal değişiklik yapar ISO Standadını kullanarak 
+        toJSON(): zaman bilgisini JSON Formatında string türünde yazdırır
+        toDateString(): zaman bigisini sadece tarih kısmını string türünde yazdırır
+        toLocalDateString(): zaman bilgisinin sadece tarih kısmını yazdırır 
+        toTimeString(): zaman bilgisinin sadece saat kısmını yazdırır
+        toLocalTimeString(): zaman bilgisinin sadece saat kısmını alır tarayıcı diline göre string türünde yazdırır
+        valueOf(): üzerinde çalışan değişken değerinin tam anlamıyla aktarımını sağlayarak yeni değişken oluşturur aktarımı zaman damgası olarak yapar
+    -->
+
+
+</body>
+
+</html>
