@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="tr-TR">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" <title> </title>
+
+    <link type="text/css" rel="stylesheet" href="">
+    <!--bu satır dışarıdan css dosyası ekleme satırı  -->
+
+</head>
+
+<body>
+    <script type="text/javascript" lang="javascript">
+        var deger = "Javascript Eğitim Serisi Eğitim Serisi Eğitim Serisi";
+        var bul = new RegExp("eğitim", "gi"); // g olmasa sadece bir tane eğitim okunur
+        var bul1 = /seri/gi;
+        var sonuc = deger.match(bul);
+        var sonuc1 = deger.match(bul1);
+        var kontrol = bul.global;
+        var konrol1 = bul.ignoreCase;
+        var konrol2 = bul.test(deger);
+        var konrol3 = deger.search("Eğitim", "gi");
+        document.write(konrol3 + "<br />");
+        document.write(sonuc1 + "<br />");
+        document.write(sonuc + "<br />");
+        document.write(kontrol + "<br />");
+        document.write(konrol1 + "<br />");
+        document.write(konrol2 + "<br />");
+
+
+
+        ////////////////////////////////////////////////////
+        var aciklama = "Php Dünya'da En Çok Kullanılan Dildir.";
+        var aciklamakontrol = new RegExp("", "g");
+        aciklamakontrol.test(aciklama);
+        var sol = RegExp.leftContext;
+        var sag = RegExp.rightContext;
+
+        document.write(aciklamakontrol + "<br />");
+        document.write(sol + "<br />");
+        document.write(sag + "<br />");
+        var degisim = aciklama.replace(aciklamakontrol, "Javascript");
+        document.write(degisim + "<br />");
+
+
+
+
+        /////////////////////////////////////////////////
+        var degisken = "Merhaba Dünya";
+        var degiskenx = new RegExp("merhaba", "i");
+        var sonucx = degisken.match(degiskenx);
+        document.write(sonucx + "<br />");
+
+        degiskenx.compile("Dünya");
+        var sonucx2 = degisken.match(degiskenx);
+        document.write(sonucx2 + "<br />");
+
+
+        //////////////////////////////////////////////
+        var ifadex = "Javascript Eğitim Seti Script.";
+        var kontrolx = new RegExp("^Javascript");
+        var kontroly = new RegExp("Seti$");
+        var sonuccx = kontrolx.test(ifadex);
+        var sonuccy = kontroly.test(ifadex);
+        document.write(sonuccx + "<br />");
+        document.write(sonuccx + "<br />");
+
+        var kontrolz = new RegExp("ğ");
+        var sonuccz = ifadex.search(kontrolz);
+        document.write(sonuccz + "<br />");
+
+        var kontrolt = new RegExp("\\bet");
+        var sonucct = kontrolt.test(ifadex);
+        document.write(sonucct + "<br />");
+
+        var kontrolw = new RegExp("\\Bet");
+        var sonuccw = kontrolw.test(ifadex);
+        document.write(sonuccw + "<br />");
+
+        var kontrolu = new RegExp("script(?= Eğitim)");
+        var sonuccu = kontrolu.test(ifadex);
+        var sonuccuu = ifadex.search(kontrolu);
+        document.write(sonuccu + "<br />");
+        document.write(sonuccuu + "<br />");
+
+
+
+        /////////////////////////////////////////////////////////
+        var metins = "Javaaaaaaaasssscript";
+        var kontrols = new RegExp("a{3,6}");
+        var sonucs = metins.match(kontrols);
+        document.write(sonucs + "<br />");
+    </script>
+    <!--
+        Düzenli ifade oluşturma:
+        1. Metod: var değişken = new RegExp("birinci");     veya          var değişken = new RegExp("birinci" "ikinci";
+        2. Metod: var değişken = /birinci/;   veya               var değişken = /birinci/ikinci;
+    -->
+    <!--
+        *match():kendisine parametre olarak verien düzenli ifadelere göre değişken içeriğini konrol eder ve aranan içeriğin eşleşmesi durumunda
+        eşleşen içeriğin yeni bir dizi olarak geriye döndürür.
+        *g: içeriğin tamamının kontrol edilmesini sağlar
+        *global: g ayarının kullanılıp kullanılmadığını kontrol ederek boolean türünde dönüş sağlar
+        *i: kontrol edilen değişkenin içeriğinde büyük küçük harf ayırt etmeden arar
+        *ignorecase: i ayarının kullanııp kullanılmadığını kontrol eder boolean türünde dönüş sağlar
+        *m: değişkenin tüm satırlarını kontrol eder.
+        *multiline: m ayarının kullanııp kullanılmadığını kontrol eder boolean türünde dönüş sağlar
+        *test(): değişken içerisinde aranan içeriğin olup olmadığını kontrol eder ve boolean türünde dönüş sağlar
+        *input: karşılaştırma durumunda eşleşme sağlanırsa değişken içeriğini tamamen geri döndürür.
+        *source: yazılan düzenli ifade değerini geriye döndürür.
+        *saerch() kendisine parametre olarak verilen değerin değişken içerisindeki index numarasını verir (ilk bulduğu)
+        *lastindex: kendisine parametre olarak verilen değerin değişken içerisindeki kendinden soranki ilk karakterin indexini verir
+        *lastmatch(): eşleşen sn değeri ekrana yazdırır
+        *leftcontext: verilen değerin solunda kalan tüm değerleri yazdırır
+        *rightcontext: verilen değerin sağında kalan tüm değerleri yazdırır
+        *replace: kendisine verilen parametreler doğrultusunda değişken içerisinde değişikiler yapabilir
+        *split(): kendisine parametre olarak verilen değerleri değişkende arar eşleşen değerleri dizi olarak geriye dönderir
+        *exec(): her çalıştığında sırayla yazdırır g ayarı kullanlırsa sırayla gider yoksa baştan alır
+        *tostring(): düzenli ifade içeriğini düz metin olarak yazar
+        *compile(): düzenli ifadede yazan değeri değiştermeyi sağlar
+       -->
+    <!--
+        KONUM BELİRLEYİCİLER
+         * ^: düzenli ifadede verilen parametre değişkenin içerisinde ilk sıradaysa true değilse false yazar (ifadeniz başına yazılır)
+         * $: düzenli ifadede verilen parametre değişkenin içerisinde son sıradaysa true değilse false yazar (ifadeniz sonuna yazılır)
+         * \\b: parametreyi kelimenin (değişkenin değil) en başında veya sonunda arar
+         * \\B: parametreyi kelimenin içinde arar başında veya sonundaysa false yazdırır
+         * ?=: aranan parametreye koşul koyar
+         * ?!: aranan parametre olması istenmeyen koşul koyar
+       -->
+    <!--
+        NİCELİK BELİRLEYİCİLER
+        * {x}: verilen parametrenin ard arda x defa tekrarlayıp tekrarlamadığını kontrol eder
+        * {x,}: verilen parametrenin ard arda x defa veya daha fazla tekrarlayıp tekrarlamadığını kontrol eder
+        * {x,y}: verilen parametrenin ard arda en az x defa en fazla y defa tekrarlayıp tekrarlamadığını kontrol eder
+        * +: verilen parametrenin en az bir defa tekrar etmiş olması lazım ki erkana yazar
+       -->
+    <!--
+        ÖZEL BELİRLEYİCİLER
+        *(): düzenli ifadelerde grup tanımlamak için kullanılır(veya) g ayarı kullanımı önemli
+        */: kendisinden sonra gelen karakterin özel karater olduğunu söyler yazdırmaz
+       -->
+
+
+</body>
+
+</html>
