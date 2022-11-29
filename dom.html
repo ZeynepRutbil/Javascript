@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="tr-TR">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" <title> </title>
+
+    <link type="text/css" rel="stylesheet" href="">
+    <!--bu satır dışarıdan css dosyası ekleme satırı  -->
+    <style>
+        div {
+            border: 1px solid black;
+            margin: 5px;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="islem()">BOYA</button>
+    <div id="x">Javascript Eğitim Seti</div>
+    İlgi Alanlarınız: <br /> Sinema <input name="ilgialanlari" type="checkbox" value="sinema" /> Edebiyat <input name="ilgialanlari" type="checkbox" value="edebiyat" /> Gezi <input name="ilgialanlari" type="checkbox" value="gezi" /> Tiyatro <input name="ilgialanlari"
+        type="checkbox" value="tiyatro" /> Spor <input name="ilgialanlari" type="checkbox" value="spor" /> Alışveriş <input name="ilgialanlari" type="checkbox" value="alışveriş" />
+    <button onclick="tiklama()"> Hepsini Seç</button>
+    <div class="bicimlendirme">Javascript Eğitim Seti</div>
+    <div class="bicimlendirme">HTML Eğitim Seti</div>
+    <div class="bicimlendirme">CSS Eğitim Seti</div>
+    <div class="bicimlendirme">Java Eğitim Seti</div>
+    <script type="text/javascript" lang="javascript">
+        //getElementById(): html tagleri içerisinde id atanmış olanlar için script taglari içerisinde değişiklik yapmayı veya içeriği depolamayı sağlar sağlar
+        var degistir = document.getElementById("x").innerHTML = "JS Eğitim Seti"
+
+        //getElementsByName
+        function tiklama() {
+            var deger = document.getElementsByName("ilgialanlari");
+            for (var baslangic = 0; baslangic < deger.length; baslangic++) {
+                deger[baslangic].checked = true;
+            }
+        }
+
+        //getElementsByTagName: ilgili tag içeriğine ulaşabilir ve değişiklik yapabilir
+        var yazdir = document.getElementsByTagName("DIV")[0].innerHTML = "Javascript Eğitim Seti";
+        document.write("<br />" + yazdir + "<br />");
+
+        //getElementsByClassName: kendisine paramete olarak verilen değer doğrultusunda ilgili clasa ulaşır ve değişiklik yapabilir
+        var ekrandagöster = document.getElementsByClassName("bicimlendirme");
+
+        // body : body taglerin erişim sağlar
+        function islem() {
+            document.body.style.backgroundColor = "yellow";
+        }
+
+        //head: head taglerina erişimi sağlar
+        //characterset ve inputEncoding: belgenin charset kodlamasına (karakter kodlamasına) erişim sağlar
+        //title: title tagine erişim için kullanılır
+        //documentmode: tarayıcının kullandığı modu gösterir (İE)
+        //documentURI: üzerinde çalışılan dosyanın urı adresini yani yolunu verir
+        var uriver = document.documentURI;
+        document.write(uriver + "<br />");
+        //locatin: belgenin url sini verir
+        var urlver = document.location;
+        document.write(urlver + "<br />");
+
+        //var urlver2 = document.location.href = "http://www.goggle.com.tr";
+        //document.write(urlver2 + "<br />");
+    </script>
+
+
+</body>
+
+</html>
