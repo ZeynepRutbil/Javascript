@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="tr-TR">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" <title> </title>
+
+    <link type="text/css" rel="stylesheet" href="">
+    <!--bu satır dışarıdan css dosyası ekleme satırı  -->
+
+</head>
+<button onclick="yenipencere()">Pencere Aç</button>
+<button onclick="pencerekapat()">Pencere Kapat</button>
+
+<body>
+    <script type="text/javascript" lang="javascript">
+        function yenipencere() {
+            var pencere = window.open("", "Yeni Pencere", "width=500 , height=250  , left=250 , top=250 , location=yes", true);
+        }
+
+        function pencerekapat() {
+            window.close();
+        }
+        var dil = navigator.language;
+        document.write(dil + "<br />");
+
+        var bilgi = navigator.userAgent;
+        document.write(bilgi + "<br />");
+
+        var platform = navigator.platform;
+        document.write(platform + "<br />");
+    </script>
+    <!--
+    OPEN():yeni bir tarayıcı penceresi açmak için kullanılır
+    1. Parametre: URL adresi
+    2. Parametre: pencerenin adı
+    3. Parametre: pencerenin özellikleri
+    4 .Parametre: pencerenin geçmiş bilgisi (true veya false)
+    PENCERE ÖZELİKLERİ
+    *width: Açılacak olan pencerenin genişliğini ayarlamak için kullanılır
+    *height: Açılacak olan pencerenin yüksekliğini ayarlamak için kullanılır
+    *left: Açılacak olan pencerenin yatay konumunu ayarlamak için kullanılır
+    *top: Açılacak olan pencerenin dikey konumunu ayarlamak için kullanılır
+    *fullscreen: Açılacak olan pencerenin tam ekran modunda gösterilip gösterilmeyeceğini ayarlamak için kullanılır (yes veya no)
+    *location: Açılacak olan pencerede adres çubuğunun gösterilip gösterilmeyeceğini ayarlamak için kullanılır (yes veya no)
+    *menubar: Açılacak olan pencerede menü çubuğunun gösterilip gösterilmeyeceğini ayarlamak için kullanılır (yes veya no)
+    *scroolbars: Açılacak olan pencerede kaydırma çubuğunun gösterilip gösterilmeyeceğini ayarlamak için kullanılır (yes veya no)
+    *status: Açılacak olan pencerede durum çubuğunun gösterilip gösterilmeyeceğini ayarlamak için kullanılır (yes veya no)
+    *toolbar: Açılacak olan pencerede navigasyon araç çubuğunun gösterilip gösterilmeyeceğini ayarlamak için kullanılır (yes veya no)
+    *titlebar: Açılacak olan pencerede başlık çubuğunun gösterilip gösterilmeyeceğini ayarlamak için kullanılır (yes veya no)
+    *resizable: Açılacak olan pencerenin boyutlanabilir olup olmadığını ayarlamak için kullanılır (yes veya no)
+-->
+    <!--
+    opener: pendere açıldıktan sonra ekrana bir şeyler yazar
+    close: açılan pencereyi kapatır
+    name: pencere adına ulaşır ve ayarlayablir
+    lenght: pencere içerisindeki tüm çerçevelerin sayısına ulaşabilir
+    stop: pencerenin durdurulmasını sağlar
+    print: pencere içeriğini yazdırır
+    history: pencerenin geçmiş nesnesine ulaşır
+    confirm(): kullanıcı işlemlerinde onay penceresi oluşturmak için kullanılır
+    promt(): kullanıcıdan bilgi almak için girdi penceresi oluşturur
+    screenx ve screeny : pencerenin bilgisayar ekranına göre yatay(x) ve dikey(y) koordinatının değerini gönderir
+    screenleft ve screentop: pencerenin bilgisayar ekranına göre yatay(left) ve dikey(top) koordinatının değerini gönderir
+    innerwidth ve innerheight: pencerenin genişlik(width) ve yükseklik(height) değerini verir
+    reizeBy(): pencerenin mevcut yükseklik ve genişik değiştirir.
+    language: browserın dil bigisini verir
+    useragnt: browserın tam bilgisini verir
+    platform: browserın hangi platform üzerinden çalıştığını gösterir (32bt 64bt)
+-->
+
+</body>
+
+</html>
