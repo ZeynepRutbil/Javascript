@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="tr-TR">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" <title> </title>
+
+    <link type="text/css" rel="stylesheet" href="">
+    <!--bu satır dışarıdan css dosyası ekleme satırı  -->
+    <style>
+        #saat {
+            padding: 10px;
+            background-color: black;
+            border: 1px solid red;
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div style="width: 150px ; margin: 25px auto;">
+        <span id="saat"></span>
+    </div>
+    <script type="text/javascript" lang="javascript">
+        function ekle(deger) {
+
+            var stringyap = deger.toString();
+            var uzunluk = stringyap.length;
+            if (uzunluk == 1) {
+
+                return "0" + stringyap;
+            } else
+                return stringyap;
+        }
+
+        function saatgüncelle() {
+            var zaman = new Date();
+            var saatdegeri = zaman.getHours();
+            var dkdegeri = zaman.getMinutes();
+            var sndegeri = zaman.getSeconds();
+            document.getElementById("saat").innerHTML = ekle(saatdegeri) + ":" + ekle(dkdegeri) + ":" + ekle(sndegeri);
+        }
+        setInterval(saatgüncelle, 1000);
+    </script>
+
+
+</body>
+
+</html>
