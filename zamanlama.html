@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="tr-TR">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" <title> </title>
+
+    <link type="text/css" rel="stylesheet" href="">
+    <!--bu satır dışarıdan css dosyası ekleme satırı  -->
+    <style>
+        .orneksinifi {
+            width: 500px;
+            height: 20px;
+            margin: 0;
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #000;
+        }
+    </style>
+
+</head>
+<button onclick="baslat()">Saymaya Başla</button>
+<div id="sonuc">0</div>
+<div id="sonuc1" class="orneksinifi">Javascript Eğitim Seti</div>
+
+<body>
+    <script type="text/javascript" lang="javascript">
+        setTimeout(function() {
+            alert("1 sn süreniz doldu")
+        }, 1000);
+
+        function bessn() {
+            alert("5 sn süreniz doldu")
+        }
+
+        function onsn() {
+            alert("10 sn süreniz doldu")
+        }
+
+        function onbessn() {
+            alert("15 sn süreniz doldu")
+        }
+        var zamanla = setTimeout(bessn, 5000);
+        setTimeout(onsn, 10000);
+        setTimeout(onbessn, 15000);
+
+        clearTimeout(zamanla);
+
+        ////////////////////////////////////
+        function baslat() {
+            var sayidegeri = document.getElementById("sonuc").innerHTML;
+            sayidegeri = Number(sayidegeri) + 1;
+            document.getElementById("sonuc").innerHTML = sayidegeri;
+            setTimeout(function() {
+                baslat();
+            }, 1000);
+        }
+
+        /////////////////////////////////
+        setInterval(renkdegistir, 2000);
+
+        function renkdegistir() {
+            var alanimiz = document.getElementById("sonuc1");
+            var sayi = Math.round(Math.random() * 10);
+            if (sayi == 1) {
+                alanimiz.style.backgroundColor = "yellow";
+            } else if (sayi == 2) {
+                alanimiz.style.backgroundColor = "black";
+            } else if (sayi == 3) {
+                alanimiz.style.backgroundColor = "white";
+            } else if (sayi == 4) {
+                alanimiz.style.backgroundColor = "red";
+            } else if (sayi == 5) {
+                alanimiz.style.backgroundColor = "blue";
+            }
+        }
+    </script>
+    <!--
+        setTimeout: verilen süre doğrultusunda bir defa olmak üzere işlem yapar (1000 = 1 saniye)
+        clearTimeout: settimeout ile oluşturulan zamanlayıcıyı kapatır
+        setInterval: belge içerisinde tanımlanna herhangi bir kodlamayı belirtilen süre aralıklarında tekrar tekrar çalıştırır
+        clearInterval: setinterval ile oluşturulan zamanlayıcı kapatır
+    -->
+
+
+</body>
+
+</html>
